@@ -1,0 +1,28 @@
+name: Tabular CICD
+
+on:
+  push:
+    branches:
+      - 'TWC**'
+      - 'release-**'
+      - 'master'
+      - 'main'
+
+jobs:
+  job1:
+    name: CI/CD deployment
+    uses: intel-innersource/frameworks.business.ssas.devops.cicd/.github/workflows/tabular-github-cicd.yml@main
+    with:
+      FULL_PROCESS: N
+      QA: N
+      UAT: Y
+      VALIDATION: N
+      DQ_CHECKS: N
+      XMLA_FILE_DEV: CDMA_Operational_Reports_DEV_DailyProcessing.xmla
+      XMLA_FILE: CDMA_Operational_Reports_DailyProcessing.xmla
+      FOLDER: NA
+      MODEL: CDMA_Operational_Reports
+      DEPLOY_TYPE: PS
+      SQUAWK: Y
+      IAP: 39606
+      TWC: 4850
