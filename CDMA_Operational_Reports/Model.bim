@@ -1,0 +1,2252 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "ECDW_DEV",
+        "connectionDetails": {
+          "protocol": "odbc",
+          "address": {
+            "options": {
+              "dsn": "ECDW_DEV"
+            }
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {
+          "hierarchicalNavigation": true
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "Odbc",
+          "path": "dsn=ECDW_DEV",
+          "Username": "SYS_ECDW_SMG_CDMA_TAB_DEV"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "OPERATIONAL_SUBMISSION",
+        "columns": [
+          {
+            "name": "CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_NM"
+          },
+          {
+            "name": "CMF_NBR",
+            "dataType": "string",
+            "sourceColumn": "CMF_NBR"
+          },
+          {
+            "name": "CDM_GEO_HIERACHY_ID",
+            "dataType": "double",
+            "sourceColumn": "CDM_GEO_HIERACHY_ID"
+          },
+          {
+            "name": "GEOGRAPHY_CD",
+            "dataType": "string",
+            "sourceColumn": "GEOGRAPHY_CD"
+          },
+          {
+            "name": "RECEIVED_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "RECEIVED_DTM"
+          },
+          {
+            "name": "PARTNER_CUSTOMER_PROFILE_ID",
+            "dataType": "string",
+            "sourceColumn": "PARTNER_CUSTOMER_PROFILE_ID"
+          },
+          {
+            "name": "SOURCE_CD",
+            "dataType": "string",
+            "sourceColumn": "SOURCE_CD"
+          },
+          {
+            "name": "FILE_INSTANCE_ID",
+            "dataType": "double",
+            "sourceColumn": "FILE_INSTANCE_ID",
+            "formatString": "0"
+          },
+          {
+            "name": "TRANSACTION_CNT",
+            "dataType": "string",
+            "sourceColumn": "TRANSACTION_CNT"
+          },
+          {
+            "name": "FILE_NM",
+            "dataType": "string",
+            "sourceColumn": "FILE_NM"
+          },
+          {
+            "name": "TRANSMISSION_ID",
+            "dataType": "string",
+            "sourceColumn": "TRANSMISSION_ID"
+          },
+          {
+            "name": "BATCH_STATUS_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "BATCH_STATUS_DTM"
+          },
+          {
+            "name": "BATCH_STATUS_BY_NM",
+            "dataType": "string",
+            "sourceColumn": "BATCH_STATUS_BY_NM"
+          },
+          {
+            "name": "ANALYST_NM",
+            "dataType": "string",
+            "sourceColumn": "ANALYST_NM"
+          },
+          {
+            "name": "SUBMISSION_IND",
+            "dataType": "string",
+            "sourceColumn": "SUBMISSION_IND"
+          },
+          {
+            "name": "REPORT_TYPE_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORT_TYPE_CD"
+          },
+          {
+            "name": "LATE_SUBMISSION_IND",
+            "dataType": "string",
+            "sourceColumn": "LATE_SUBMISSION_IND"
+          },
+          {
+            "name": "LAST_PROCESS_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "LAST_PROCESS_DTM"
+          },
+          {
+            "name": "LAST_TRANSACTION_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "LAST_TRANSACTION_DTM",
+            "formatString": "dd-MMM-yy",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "FILE_RECEIVED_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "FILE_RECEIVED_DTM",
+            "formatString": "dd-MMM-yy HH:mm:ss",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"GeneralLongDateTime\" FormatString=\"dd-MMM-yy HH:mm:ss\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "BATCH_STATUS_CD",
+            "dataType": "string",
+            "sourceColumn": "BATCH_STATUS_CD"
+          },
+          {
+            "name": "FIRST_TRANSACTION_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "FIRST_TRANSACTION_DTM",
+            "formatString": "dd-MMM-yy",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "FISCAL_YEAR_WORK_WEEK_NM",
+            "dataType": "string",
+            "sourceColumn": "FISCAL_YEAR_WORK_WEEK_NM"
+          },
+          {
+            "name": "CUSTOMER_FACING_STATUS_DSC",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_FACING_STATUS_DSC"
+          },
+          {
+            "name": "MVIEW_TS",
+            "dataType": "string",
+            "sourceColumn": "MVIEW_TS"
+          },
+          {
+            "name": "INGEST_TS",
+            "dataType": "string",
+            "sourceColumn": "INGEST_TS"
+          },
+          {
+            "name": "LAST_REFRESH_DTM",
+            "dataType": "string",
+            "sourceColumn": "LAST_REFRESH_DTM"
+          },
+          {
+            "type": "calculated",
+            "name": "Dataset",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "UPPER(OPERATIONAL_SUBMISSION[REPORT_TYPE_CD])"
+          },
+          {
+            "name": "PROGRAM_NM",
+            "dataType": "string",
+            "sourceColumn": "PROGRAM_NM"
+          },
+          {
+            "name": "PROCESS_AREA_NM",
+            "dataType": "string",
+            "sourceColumn": "PROCESS_AREA_NM"
+          },
+          {
+            "name": "SOURCE_TEMPLATE_VERSION_NBR",
+            "dataType": "double",
+            "sourceColumn": "SOURCE_TEMPLATE_VERSION_NBR"
+          },
+          {
+            "name": "TEMPLATE_VERSION_NBR",
+            "dataType": "double",
+            "sourceColumn": "TEMPLATE_VERSION_NBR"
+          },
+          {
+            "name": "TEMPLATE_VERSION_NM",
+            "dataType": "string",
+            "sourceColumn": "TEMPLATE_VERSION_NM"
+          },
+          {
+            "type": "calculated",
+            "name": "Late Submission Derived",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "IF(OPERATIONAL_SUBMISSION[LATE_SUBMISSION_IND]=\"Y\",\"Y\",\"N\")"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"ECDW_DEV\",",
+                "    SALES_MARKETING_Database = Source{[Name=\"SALES_MARKETING\",Kind=\"Database\"]}[Data],",
+                "    CONSUMPTION_SALES_OUT_ANALYSIS_Schema = SALES_MARKETING_Database{[Name=\"CONSUMPTION_SALES_OUT_ANALYSIS\",Kind=\"Schema\"]}[Data],",
+                "    OPERATIONAL_SUBMISSION_View = CONSUMPTION_SALES_OUT_ANALYSIS_Schema{[Name=\"OPERATIONAL_SUBMISSION\",Kind=\"View\"]}[Data]",
+                "in",
+                "    OPERATIONAL_SUBMISSION_View"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Last Refreshed_Sub",
+            "expression": "REPLACE(MAX(OPERATIONAL_SUBMISSION[LAST_REFRESH_DTM]),24,3,\"PST\")"
+          }
+        ]
+      },
+      {
+        "name": "OPERATIONAL_REJECTION",
+        "columns": [
+          {
+            "name": "CDM_TRANSACTION_ID",
+            "dataType": "string",
+            "sourceColumn": "CDM_TRANSACTION_ID"
+          },
+          {
+            "name": "PROGRAM_NM",
+            "dataType": "string",
+            "sourceColumn": "PROGRAM_NM"
+          },
+          {
+            "name": "PROCESS_AREA_NM",
+            "dataType": "string",
+            "sourceColumn": "PROCESS_AREA_NM"
+          },
+          {
+            "name": "DATASET_NM",
+            "dataType": "string",
+            "sourceColumn": "DATASET_NM"
+          },
+          {
+            "name": "TIER_TWO_THREE_HEIR_ID",
+            "dataType": "double",
+            "sourceColumn": "TIER_TWO_THREE_HEIR_ID"
+          },
+          {
+            "name": "TEMPLATE_ID",
+            "dataType": "double",
+            "sourceColumn": "TEMPLATE_ID"
+          },
+          {
+            "name": "ORGANIZATION_ID",
+            "dataType": "double",
+            "sourceColumn": "ORGANIZATION_ID"
+          },
+          {
+            "name": "ORGANIZATION_NM",
+            "dataType": "string",
+            "sourceColumn": "ORGANIZATION_NM"
+          },
+          {
+            "name": "CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_NM"
+          },
+          {
+            "name": "ORGANIZATION_UCD_ID",
+            "dataType": "string",
+            "sourceColumn": "ORGANIZATION_UCD_ID"
+          },
+          {
+            "name": "PARTNER_CUSTOMER_PROFILE_ID",
+            "dataType": "string",
+            "sourceColumn": "PARTNER_CUSTOMER_PROFILE_ID"
+          },
+          {
+            "name": "DIRECT_CUSTOMER_RELATIONSHIP_FUNCTIONAL_ROLE_CD",
+            "dataType": "string",
+            "sourceColumn": "DIRECT_CUSTOMER_RELATIONSHIP_FUNCTIONAL_ROLE_CD"
+          },
+          {
+            "name": "DATA_INGEST_MODE_CD",
+            "dataType": "string",
+            "sourceColumn": "DATA_INGEST_MODE_CD"
+          },
+          {
+            "name": "FILE_INSTANCE_ID",
+            "dataType": "int64",
+            "sourceColumn": "FILE_INSTANCE_ID",
+            "formatString": "0"
+          },
+          {
+            "name": "FILE_SUB_INSTANCE_ID",
+            "dataType": "double",
+            "sourceColumn": "FILE_SUB_INSTANCE_ID"
+          },
+          {
+            "name": "FILE_ID",
+            "dataType": "string",
+            "sourceColumn": "FILE_ID"
+          },
+          {
+            "name": "CHILD_FILE_INSTANCE_ID",
+            "dataType": "double",
+            "sourceColumn": "CHILD_FILE_INSTANCE_ID"
+          },
+          {
+            "name": "DISTRIBUTOR_CMF_ID",
+            "dataType": "string",
+            "sourceColumn": "DISTRIBUTOR_CMF_ID"
+          },
+          {
+            "name": "DISTRIBUTION_CHANNEL_CD",
+            "dataType": "string",
+            "sourceColumn": "DISTRIBUTION_CHANNEL_CD"
+          },
+          {
+            "name": "SALES_ORGANIZATION_CD",
+            "dataType": "string",
+            "sourceColumn": "SALES_ORGANIZATION_CD"
+          },
+          {
+            "name": "REPORTED_INTEL_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_PART_NBR"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_PART_NBR"
+          },
+          {
+            "name": "ALIGNED_INTEL_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_INTEL_PART_NBR"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_PART_NBR"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_PART_NUMBER_PROFISEE_CD",
+            "dataType": "double",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_PART_NUMBER_PROFISEE_CD"
+          },
+          {
+            "name": "ALIGNED_INTEL_PART_NUMBER_PROFISEE_CD",
+            "dataType": "double",
+            "sourceColumn": "ALIGNED_INTEL_PART_NUMBER_PROFISEE_CD"
+          },
+          {
+            "name": "ALIGNED_MMID_TXT",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_MMID_TXT"
+          },
+          {
+            "name": "OLD_MATERIAL_ID",
+            "dataType": "string",
+            "sourceColumn": "OLD_MATERIAL_ID"
+          },
+          {
+            "name": "REPORTED_ASSOCIATE_DISTRIBUTOR_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_ASSOCIATE_DISTRIBUTOR_NBR"
+          },
+          {
+            "name": "REPORTED_SAP_SHIP_TO_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SAP_SHIP_TO_NBR"
+          },
+          {
+            "name": "REPORTED_INVENTORY_AS_OF_DT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INVENTORY_AS_OF_DT"
+          },
+          {
+            "name": "REPORTED_INVENTORY_ON_HAND_UNIT_QTY",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INVENTORY_ON_HAND_UNIT_QTY"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_BRANCH_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_BRANCH_NM"
+          },
+          {
+            "name": "DISTRIBUTOR_DIRECT_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "DISTRIBUTOR_DIRECT_CUSTOMER_NM"
+          },
+          {
+            "name": "REPORTED_APPLICATION_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_APPLICATION_CD"
+          },
+          {
+            "name": "REPORTED_CLAIM_REFERENCE_LINE_ITEM_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CLAIM_REFERENCE_LINE_ITEM_NBR"
+          },
+          {
+            "name": "REPORTED_CURRENT_UNIT_DISTRIBUTOR_COST_AMT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CURRENT_UNIT_DISTRIBUTOR_COST_AMT"
+          },
+          {
+            "name": "REPORTED_DESIGN_WIN_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DESIGN_WIN_NBR"
+          },
+          {
+            "name": "REPORTED_DIRECT_IPIGID_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DIRECT_IPIGID_NBR"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_DEBIT_NOTE_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_DEBIT_NOTE_NBR"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_TRANSFER_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_TRANSFER_CD"
+          },
+          {
+            "name": "REPORTED_DPA_LINE_ITEM_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DPA_LINE_ITEM_NBR"
+          },
+          {
+            "name": "REPORTED_ERROR_CORRECTION_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_ERROR_CORRECTION_CD"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_COUNTRY_CD"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_NM"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_ID"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STATE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STATE_NM"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_TWO_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_TWO_TXT"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_THREE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_THREE_TXT"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_ZIP_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_ZIP_CD"
+          },
+          {
+            "name": "REPORTED_INDIRECT_IPIGID_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_IPIGID_NBR"
+          },
+          {
+            "name": "REPORTED_INVOICE_DT",
+            "dataType": "dateTime",
+            "sourceColumn": "REPORTED_INVOICE_DT",
+            "formatString": "dd-MMM-yy",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "REPORTED_INVOICE_LINE_NBR",
+            "dataType": "int64",
+            "sourceColumn": "REPORTED_INVOICE_LINE_NBR"
+          },
+          {
+            "name": "REPORTED_INVOICE_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INVOICE_NBR"
+          },
+          {
+            "name": "REPORTED_INTERNATIONAL_STANDARD_ORGANISATION_CURRENCY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTERNATIONAL_STANDARD_ORGANISATION_CURRENCY_CD"
+          },
+          {
+            "name": "REPORTED_QUOTE_DPA_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_QUOTE_DPA_NBR"
+          },
+          {
+            "name": "REPORTED_RESALE_UNIT_PRICE_AMT",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_RESALE_UNIT_PRICE_AMT"
+          },
+          {
+            "name": "REPORTED_RESALE_UNIT_QTY",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_RESALE_UNIT_QTY"
+          },
+          {
+            "name": "REPORTED_RETURN_INVOICE_LINE_ITEM_NBR",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_RETURN_INVOICE_LINE_ITEM_NBR"
+          },
+          {
+            "name": "REPORTED_RETURN_INVOICE_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_RETURN_INVOICE_NBR"
+          },
+          {
+            "name": "REPORTED_RETURN_SHIP_DT",
+            "dataType": "dateTime",
+            "sourceColumn": "REPORTED_RETURN_SHIP_DT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_CITY_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_COUNTRY_CD"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_NBR"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STATE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STATE_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_TWO_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_TWO_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_THREE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_THREE_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_ZIP_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_ZIP_CD"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_COUNTRY_CD"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_NM"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_ID"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STATE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STATE_NM"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_TWO_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_TWO_TXT"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_THREE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_THREE_TXT"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_ZIP_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_ZIP_CD"
+          },
+          {
+            "name": "REPORTED_UNIT_SPECIAL_COST_AMT",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_UNIT_SPECIAL_COST_AMT"
+          },
+          {
+            "name": "DIRECT_CUSTOMER_BUSINESS_ROUTING_CD",
+            "dataType": "string",
+            "sourceColumn": "DIRECT_CUSTOMER_BUSINESS_ROUTING_CD"
+          },
+          {
+            "name": "NIELSEN_ID",
+            "dataType": "string",
+            "sourceColumn": "NIELSEN_ID"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_AGGREGATION_TYPE_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_AGGREGATION_TYPE_CD"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_NM"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_NM"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_PHYSICAL_BUILDING_ADDRESS_TXT",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_PHYSICAL_BUILDING_ADDRESS_TXT"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_PHYSICAL_BUILDING_ADDRESS_TXT",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_PHYSICAL_BUILDING_ADDRESS_TXT"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_DISTRICT_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_DISTRICT_NM"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_DISTRICT_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_DISTRICT_NM"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_COUNTRY_SUBDIVISION_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_COUNTRY_SUBDIVISION_NM"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_COUNTRY_SUBDIVISION_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_COUNTRY_SUBDIVISION_NM"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_POSTAL_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_POSTAL_CD"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_POSTAL_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_POSTAL_CD"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_COUNTRY_CD"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_COUNTRY_CD"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CDM_END_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CDM_END_CUSTOMER_ID"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CDM_END_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CDM_END_CUSTOMER_ID"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CDM_END_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CDM_END_CUSTOMER_ID"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_ID"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_COMPLIANCE_STATUS_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_COMPLIANCE_STATUS_CD"
+          },
+          {
+            "name": "ALIGNED_SOLD_TO_CUSTOMER_ADDRESS_VERIFICATION_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SOLD_TO_CUSTOMER_ADDRESS_VERIFICATION_CD"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_ID"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_ADDRESS_VERIFICATION_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_ADDRESS_VERIFICATION_CD"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_COMPLIANCE_STS_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_COMPLIANCE_STS_CD"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_ID"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_ADDRESS_VERIFICATION_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_ADDRESS_VERIFICATION_CD"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_COMPLIANCE_STS_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_COMPLIANCE_STS_CD"
+          },
+          {
+            "name": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_AGGREGATION_TYPE_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_DISTRIBUTOR_INDIRECT_CUSTOMER_AGGREGATION_TYPE_CD"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_NM"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_PHYSICAL_BUILDING_ADDRESS_TXT",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_PHYSICAL_BUILDING_ADDRESS_TXT"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_DISTRICT_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_DISTRICT_NM"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_COUNTRY_SUBDIVISION_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_COUNTRY_SUBDIVISION_NM"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_POSTAL_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_POSTAL_CD"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_COUNTRY_CD"
+          },
+          {
+            "name": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_AGGREGATION_TYPE_CD",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_SHIP_TO_LOGISTICS_CUSTOMER_AGGREGATION_TYPE_CD"
+          },
+          {
+            "name": "EDI_TRANSMISSION_CD",
+            "dataType": "string",
+            "sourceColumn": "EDI_TRANSMISSION_CD"
+          },
+          {
+            "name": "XMIT_REFERENCE_NBR",
+            "dataType": "string",
+            "sourceColumn": "XMIT_REFERENCE_NBR"
+          },
+          {
+            "name": "INTEL_RECEIPT_TS",
+            "dataType": "dateTime",
+            "sourceColumn": "INTEL_RECEIPT_TS"
+          },
+          {
+            "name": "DISTRIBUTOR_SENDER_LOCAL_DT",
+            "dataType": "dateTime",
+            "sourceColumn": "DISTRIBUTOR_SENDER_LOCAL_DT"
+          },
+          {
+            "name": "REPORTED_CONSUMPTION_GEOGRAPHY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CONSUMPTION_GEOGRAPHY_CD"
+          },
+          {
+            "name": "REPORTED_CONSUMPTION_REGION_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CONSUMPTION_REGION_NM"
+          },
+          {
+            "name": "REPORTED_OEM_PRODUCT_LINE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_PRODUCT_LINE_NM"
+          },
+          {
+            "name": "REPORTED_OEM_MODEL_LINE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_MODEL_LINE_NM"
+          },
+          {
+            "name": "REPORTED_FORM_FACTOR_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_FORM_FACTOR_NM"
+          },
+          {
+            "name": "REPORTED_CONSUMPTION_INTEL_PROCESSOR_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CONSUMPTION_INTEL_PROCESSOR_NBR"
+          },
+          {
+            "name": "REPORTED_INTEL_CPU_GROUP_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_CPU_GROUP_NM"
+          },
+          {
+            "name": "REPORTED_INTEL_CPU_FAMILY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_CPU_FAMILY_NM"
+          },
+          {
+            "name": "REPORTED_SOLD_QTY",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_QTY"
+          },
+          {
+            "name": "REPORTED_OEM_REPORTED_FINISHED_SYSTEM_QTY",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_REPORTED_FINISHED_SYSTEM_QTY"
+          },
+          {
+            "name": "REPORTED_OEM_REPORTED_CONSUMPTION_MONTH_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_REPORTED_CONSUMPTION_MONTH_TXT"
+          },
+          {
+            "name": "REPORTED_SEGMENT_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SEGMENT_NM"
+          },
+          {
+            "name": "REPORTED_VERTICAL_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_VERTICAL_NM"
+          },
+          {
+            "name": "REPORTED_OEM_CONSUMPTION_FISCAL_QUARTER_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_CONSUMPTION_FISCAL_QUARTER_TXT"
+          },
+          {
+            "name": "REPORTED_OEM_CONSUMPTION_FISCAL_MONTH_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_CONSUMPTION_FISCAL_MONTH_TXT"
+          },
+          {
+            "name": "REPORTED_OEM_CONSUMPTION_FISCAL_WEEK_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_CONSUMPTION_FISCAL_WEEK_TXT"
+          },
+          {
+            "name": "REPORTED_OEM_CALENDAR_WEEK_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_CALENDAR_WEEK_TXT"
+          },
+          {
+            "name": "REPORTED_CONSUMPTION_DT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CONSUMPTION_DT"
+          },
+          {
+            "name": "REPORTED_CONSUMPTION_COUNTRY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CONSUMPTION_COUNTRY_NM"
+          },
+          {
+            "name": "REPORTED_OEM_PRODUCT_FAMILY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_PRODUCT_FAMILY_NM"
+          },
+          {
+            "name": "MANUFACTURER_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "MANUFACTURER_PART_NBR"
+          },
+          {
+            "name": "REPORTED_OEM_PRODUCT_DSC",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_PRODUCT_DSC"
+          },
+          {
+            "name": "REPORTED_INTEL_CHIPSET_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_CHIPSET_PART_NBR"
+          },
+          {
+            "name": "REPORTED_INTEL_CHIPSET_PART_DSC",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_CHIPSET_PART_DSC"
+          },
+          {
+            "name": "REPORTED_INTEL_VPRO_DSC",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_VPRO_DSC"
+          },
+          {
+            "name": "REPORTED_INTEL_EVO_DSC",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_EVO_DSC"
+          },
+          {
+            "name": "REPORTED_END_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_END_CUSTOMER_NM"
+          },
+          {
+            "name": "REPORTED_END_CUSTOMER_STREET_ADDRESS_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_END_CUSTOMER_STREET_ADDRESS_TXT"
+          },
+          {
+            "name": "REPORTED_END_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_END_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "REPORTED_END_CUSTOMER_STATE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_END_CUSTOMER_STATE_NM"
+          },
+          {
+            "name": "REPORTED_END_CUSTOMER_COUNTRY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_END_CUSTOMER_COUNTRY_NM"
+          },
+          {
+            "name": "REPORTED_END_CUSTOMER_DISTRICT_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_END_CUSTOMER_DISTRICT_NM"
+          },
+          {
+            "name": "REPORTED_END_CUSTOMER_POSTAL_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_END_CUSTOMER_POSTAL_CD"
+          },
+          {
+            "name": "REPORTED_PO_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_PO_NBR"
+          },
+          {
+            "name": "REPORTED_OEM_CALENDAR_QUARTER_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_CALENDAR_QUARTER_TXT"
+          },
+          {
+            "name": "REPORTED_OEM_INTEL_PRODUCT_TYPE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INTEL_PRODUCT_TYPE_NM"
+          },
+          {
+            "name": "REPORTED_OEM_INTEL_KIT_QTY",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INTEL_KIT_QTY"
+          },
+          {
+            "name": "REPORTED_INTEL_PROCESSOR_DSC",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_PROCESSOR_DSC"
+          },
+          {
+            "name": "CONSUMPTION_REVENUE_AMT",
+            "dataType": "string",
+            "sourceColumn": "CONSUMPTION_REVENUE_AMT"
+          },
+          {
+            "name": "NETASP_ID",
+            "dataType": "string",
+            "sourceColumn": "NETASP_ID"
+          },
+          {
+            "name": "INTERNATIONAL_STANDARD_ORGANIZATION_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "INTERNATIONAL_STANDARD_ORGANIZATION_COUNTRY_CD"
+          },
+          {
+            "name": "INTERNATIONAL_STANDARD_ORGANIZATION_COUNTRY_THREE_CD",
+            "dataType": "string",
+            "sourceColumn": "INTERNATIONAL_STANDARD_ORGANIZATION_COUNTRY_THREE_CD"
+          },
+          {
+            "name": "INTERNATIONAL_STANDARD_ORGANIZATION_COUNTRY_TWO_CD",
+            "dataType": "string",
+            "sourceColumn": "INTERNATIONAL_STANDARD_ORGANIZATION_COUNTRY_TWO_CD"
+          },
+          {
+            "name": "UCD_COUNTRY_ID",
+            "dataType": "string",
+            "sourceColumn": "UCD_COUNTRY_ID"
+          },
+          {
+            "name": "EPM_ID",
+            "dataType": "string",
+            "sourceColumn": "EPM_ID"
+          },
+          {
+            "name": "ALIGNED_PROCESSOR_NBR",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_PROCESSOR_NBR"
+          },
+          {
+            "name": "PROFISEE_UUID_TXT",
+            "dataType": "string",
+            "sourceColumn": "PROFISEE_UUID_TXT"
+          },
+          {
+            "name": "ALIGNED_CONSUMPTION_REGION_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_CONSUMPTION_REGION_NM"
+          },
+          {
+            "name": "ALIGNED_FORM_FACTOR_NM",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_FORM_FACTOR_NM"
+          },
+          {
+            "name": "PROCESSOR_PROFISEE_CD",
+            "dataType": "string",
+            "sourceColumn": "PROCESSOR_PROFISEE_CD"
+          },
+          {
+            "name": "REGION_COUNTRY_PROFISEE_CD",
+            "dataType": "string",
+            "sourceColumn": "REGION_COUNTRY_PROFISEE_CD"
+          },
+          {
+            "name": "NETASP_PROFISEE_CD",
+            "dataType": "string",
+            "sourceColumn": "NETASP_PROFISEE_CD"
+          },
+          {
+            "name": "REPORTED_TO_ALIGNED_REGION_PROFISEE_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_TO_ALIGNED_REGION_PROFISEE_CD"
+          },
+          {
+            "name": "FORM_FACTOR_PROFISEE_CD",
+            "dataType": "string",
+            "sourceColumn": "FORM_FACTOR_PROFISEE_CD"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_GEOGRAPHY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_GEOGRAPHY_CD"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_REGION_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_REGION_NM"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_FORM_FACTOR_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_FORM_FACTOR_NM"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_INTEL_PROCESSOR_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_INTEL_PROCESSOR_NBR"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_INTEL_CPU_GROUP_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_INTEL_CPU_GROUP_NM"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_INTEL_CPU_FAMILY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_INTEL_CPU_FAMILY_NM"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_QTY",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_QTY"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_INTEL_MATERIAL_ID",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_INTEL_MATERIAL_ID"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_KEY_FIGURE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_KEY_FIGURE_NM"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_VERTICAL_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_VERTICAL_NM"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_CALENDAR_WEEK_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_CALENDAR_WEEK_TXT"
+          },
+          {
+            "name": "REPORTED_OEM_INVENTORY_PART_CALENDAR_DT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_OEM_INVENTORY_PART_CALENDAR_DT"
+          },
+          {
+            "name": "ALIGNED_REGION_REFERENCE_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_REGION_REFERENCE_ID"
+          },
+          {
+            "name": "ALIGNED_FORM_FACTOR_REFERENCE_ID",
+            "dataType": "string",
+            "sourceColumn": "ALIGNED_FORM_FACTOR_REFERENCE_ID"
+          },
+          {
+            "name": "CDM_REGION_ID",
+            "dataType": "string",
+            "sourceColumn": "CDM_REGION_ID"
+          },
+          {
+            "name": "CDM_FORM_FACTOR_ID",
+            "dataType": "string",
+            "sourceColumn": "CDM_FORM_FACTOR_ID"
+          },
+          {
+            "name": "MMID_PROFISEE_CD",
+            "dataType": "string",
+            "sourceColumn": "MMID_PROFISEE_CD"
+          },
+          {
+            "name": "MMID_EPM_ID",
+            "dataType": "string",
+            "sourceColumn": "MMID_EPM_ID"
+          },
+          {
+            "name": "PROFISEE_MMID_TXT",
+            "dataType": "string",
+            "sourceColumn": "PROFISEE_MMID_TXT"
+          },
+          {
+            "name": "FISCAL_CALENDAR_MULTI_LEVEL_KEY",
+            "dataType": "double",
+            "sourceColumn": "FISCAL_CALENDAR_MULTI_LEVEL_KEY"
+          },
+          {
+            "name": "GREGORIAN_CALENDAR_MULTI_LEVEL_KEY",
+            "dataType": "double",
+            "sourceColumn": "GREGORIAN_CALENDAR_MULTI_LEVEL_KEY"
+          },
+          {
+            "name": "REJECTED_DT",
+            "dataType": "dateTime",
+            "sourceColumn": "REJECTED_DT"
+          },
+          {
+            "name": "REJECTED_BY_NM",
+            "dataType": "string",
+            "sourceColumn": "REJECTED_BY_NM"
+          },
+          {
+            "name": "REJECTED_REASON_DSC",
+            "dataType": "string",
+            "sourceColumn": "REJECTED_REASON_DSC"
+          },
+          {
+            "name": "REJECTION_REASON_TYPE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REJECTION_REASON_TYPE_TXT"
+          },
+          {
+            "name": "CREATE_AGENT_ID",
+            "dataType": "string",
+            "sourceColumn": "CREATE_AGENT_ID"
+          },
+          {
+            "name": "CREATE_DTM",
+            "dataType": "string",
+            "sourceColumn": "CREATE_DTM"
+          },
+          {
+            "name": "CHANGE_AGENT_ID",
+            "dataType": "string",
+            "sourceColumn": "CHANGE_AGENT_ID"
+          },
+          {
+            "name": "CHANGE_DTM",
+            "dataType": "string",
+            "sourceColumn": "CHANGE_DTM"
+          },
+          {
+            "name": "CHANGE_AGENT_ID_WWID",
+            "dataType": "string",
+            "sourceColumn": "CHANGE_AGENT_ID_WWID"
+          },
+          {
+            "name": "CREATE_AGENT_ID_WWID",
+            "dataType": "string",
+            "sourceColumn": "CREATE_AGENT_ID_WWID"
+          },
+          {
+            "name": "INGEST_TS",
+            "dataType": "string",
+            "sourceColumn": "INGEST_TS"
+          },
+          {
+            "name": "TEMPLATE_VERSION_NBR",
+            "dataType": "double",
+            "sourceColumn": "TEMPLATE_VERSION_NBR"
+          },
+          {
+            "name": "TEMPLATE_VERSION_NM",
+            "dataType": "string",
+            "sourceColumn": "TEMPLATE_VERSION_NM"
+          },
+          {
+            "name": "MVIEW_TS",
+            "dataType": "string",
+            "sourceColumn": "MVIEW_TS"
+          },
+          {
+            "name": "LAST_REFRESH_DTM",
+            "dataType": "string",
+            "sourceColumn": "LAST_REFRESH_DTM"
+          },
+          {
+            "type": "calculated",
+            "name": "Dataset",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "UPPER(OPERATIONAL_REJECTION[DATASET_NM])"
+          },
+          {
+            "type": "calculated",
+            "name": "Rejected Status Graph",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " IF(UPPER(OPERATIONAL_REJECTION[REJECTED_BY_NM])=\"SYSTEM\",\"Automatic\",\"Manual\")"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"ECDW_DEV\",",
+                "    SALES_MARKETING_Database = Source{[Name=\"SALES_MARKETING\",Kind=\"Database\"]}[Data],",
+                "    CONSUMPTION_SALES_OUT_ANALYSIS_Schema = SALES_MARKETING_Database{[Name=\"CONSUMPTION_SALES_OUT_ANALYSIS\",Kind=\"Schema\"]}[Data],",
+                "    OPERATIONAL_REJECTION_View = CONSUMPTION_SALES_OUT_ANALYSIS_Schema{[Name=\"OPERATIONAL_REJECTION\",Kind=\"View\"]}[Data]",
+                "in",
+                "    OPERATIONAL_REJECTION_View"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Last Refreshed_Rej",
+            "expression": "REPLACE(MAX(OPERATIONAL_REJECTION[LAST_REFRESH_DTM]),24,3,\"PST\")"
+          }
+        ]
+      },
+      {
+        "name": "OPERATIONAL_FALLOUT",
+        "columns": [
+          {
+            "name": "PROGRAM_NM",
+            "dataType": "string",
+            "sourceColumn": "PROGRAM_NM"
+          },
+          {
+            "name": "PROCESS_AREA_NM",
+            "dataType": "string",
+            "sourceColumn": "PROCESS_AREA_NM"
+          },
+          {
+            "name": "DATASET_NM",
+            "dataType": "string",
+            "sourceColumn": "DATASET_NM"
+          },
+          {
+            "name": "TIER_TWO_THREE_HEIR_ID",
+            "dataType": "double",
+            "sourceColumn": "TIER_TWO_THREE_HEIR_ID"
+          },
+          {
+            "name": "TEMPLATE_ID",
+            "dataType": "double",
+            "sourceColumn": "TEMPLATE_ID"
+          },
+          {
+            "name": "ORGANIZATION_ID",
+            "dataType": "string",
+            "sourceColumn": "ORGANIZATION_ID"
+          },
+          {
+            "name": "CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "CUSTOMER_NM"
+          },
+          {
+            "name": "DATA_INGEST_MODE_CD",
+            "dataType": "string",
+            "sourceColumn": "DATA_INGEST_MODE_CD"
+          },
+          {
+            "name": "FILE_INSTANCE_ID",
+            "dataType": "int64",
+            "sourceColumn": "FILE_INSTANCE_ID",
+            "formatString": "0"
+          },
+          {
+            "name": "FILE_SUB_INSTANCE_ID",
+            "dataType": "double",
+            "sourceColumn": "FILE_SUB_INSTANCE_ID"
+          },
+          {
+            "name": "FILE_ID",
+            "dataType": "string",
+            "sourceColumn": "FILE_ID"
+          },
+          {
+            "name": "CHILD_FILE_INSTANCE_ID",
+            "dataType": "double",
+            "sourceColumn": "CHILD_FILE_INSTANCE_ID"
+          },
+          {
+            "name": "DISTRIBUTOR_CMF_ID",
+            "dataType": "string",
+            "sourceColumn": "DISTRIBUTOR_CMF_ID"
+          },
+          {
+            "name": "DISTRIBUTION_CHANNEL_CD",
+            "dataType": "string",
+            "sourceColumn": "DISTRIBUTION_CHANNEL_CD"
+          },
+          {
+            "name": "SALES_ORGANIZATION_CD",
+            "dataType": "string",
+            "sourceColumn": "SALES_ORGANIZATION_CD"
+          },
+          {
+            "name": "PARTNER_CUSTOMER_PROFILE_ID",
+            "dataType": "string",
+            "sourceColumn": "PARTNER_CUSTOMER_PROFILE_ID"
+          },
+          {
+            "name": "DIRECT_CUSTOMER_RELATIONSHIP_FUNCTIONAL_ROLE_CD",
+            "dataType": "string",
+            "sourceColumn": "DIRECT_CUSTOMER_RELATIONSHIP_FUNCTIONAL_ROLE_CD"
+          },
+          {
+            "name": "CDM_TRANSACTION_ID",
+            "dataType": "string",
+            "sourceColumn": "CDM_TRANSACTION_ID"
+          },
+          {
+            "name": "REPORTED_INTEL_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTEL_PART_NBR"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_PART_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_PART_NBR"
+          },
+          {
+            "name": "REPORTED_ASSOCIATE_DISTRIBUTOR_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_ASSOCIATE_DISTRIBUTOR_NBR"
+          },
+          {
+            "name": "REPORTED_SAP_SHIP_TO_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SAP_SHIP_TO_NBR"
+          },
+          {
+            "name": "CDM_REJECTED_IND",
+            "dataType": "string",
+            "sourceColumn": "CDM_REJECTED_IND"
+          },
+          {
+            "name": "DEACTIVATION_BY_USR_IND",
+            "dataType": "string",
+            "sourceColumn": "DEACTIVATION_BY_USR_IND"
+          },
+          {
+            "name": "REPORTED_INVENTORY_AS_OF_DT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INVENTORY_AS_OF_DT"
+          },
+          {
+            "name": "INVENTORY_ON_HAND_UNIT_QTY",
+            "dataType": "double",
+            "sourceColumn": "INVENTORY_ON_HAND_UNIT_QTY"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_BRANCH_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_BRANCH_CD"
+          },
+          {
+            "name": "REPORTED_APPLICATION_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_APPLICATION_CD"
+          },
+          {
+            "name": "REPORTED_CLAIM_REFERENCE_LINE_ITEM_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_CLAIM_REFERENCE_LINE_ITEM_NBR"
+          },
+          {
+            "name": "REPORTED_CURRENT_UNIT_DISTRIBUTOR_COST_AMT",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_CURRENT_UNIT_DISTRIBUTOR_COST_AMT"
+          },
+          {
+            "name": "REPORTED_DESIGN_WIN_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DESIGN_WIN_NBR"
+          },
+          {
+            "name": "REPORTED_DIRECT_IPIGID_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DIRECT_IPIGID_NBR"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_DEBIT_NOTE_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_DEBIT_NOTE_NBR"
+          },
+          {
+            "name": "REPORTED_DISTRIBUTOR_TRANSFER_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DISTRIBUTOR_TRANSFER_CD"
+          },
+          {
+            "name": "REPORTED_DPA_LINE_ITEM_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_DPA_LINE_ITEM_NBR"
+          },
+          {
+            "name": "REPORTED_ERROR_CORRECTION_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_ERROR_CORRECTION_CD"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_COUNTRY_CD"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_NM"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_ID"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STATE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STATE_NM"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_TWO_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_TWO_TXT"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_THREE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_STREET_ADDRESS_THREE_TXT"
+          },
+          {
+            "name": "REPORTED_INDIRECT_CUSTOMER_ZIP_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_CUSTOMER_ZIP_CD"
+          },
+          {
+            "name": "REPORTED_INDIRECT_IPIGID_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INDIRECT_IPIGID_NBR"
+          },
+          {
+            "name": "REPORTED_INVOICE_DT",
+            "dataType": "dateTime",
+            "sourceColumn": "REPORTED_INVOICE_DT",
+            "formatString": "dd-MMM-yy",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1033\" Group=\"ShortDate\" FormatString=\"dd-MMM-yy\" /></DateTimes></Format>"
+              }
+            ]
+          },
+          {
+            "name": "REPORTED_INVOICE_LINE_NBR",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_INVOICE_LINE_NBR"
+          },
+          {
+            "name": "REPORTED_INVOICE_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INVOICE_NBR"
+          },
+          {
+            "name": "REPORTED_INTERNATIONAL_STANDARD_ORGANISATION_CURRENCY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_INTERNATIONAL_STANDARD_ORGANISATION_CURRENCY_CD"
+          },
+          {
+            "name": "REPORTED_QUOTE_DPA_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_QUOTE_DPA_NBR"
+          },
+          {
+            "name": "REPORTED_RESALE_UNIT_PRICE_AMT",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_RESALE_UNIT_PRICE_AMT"
+          },
+          {
+            "name": "REPORTED_RESALE_UNIT_QTY",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_RESALE_UNIT_QTY"
+          },
+          {
+            "name": "REPORTED_RETURN_INVOICE_LINE_ITEM_NBR",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_RETURN_INVOICE_LINE_ITEM_NBR"
+          },
+          {
+            "name": "REPORTED_RETURN_INVOICE_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_RETURN_INVOICE_NBR"
+          },
+          {
+            "name": "REPORTED_RETURN_SHIP_DT",
+            "dataType": "dateTime",
+            "sourceColumn": "REPORTED_RETURN_SHIP_DT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_CITY_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_COUNTRY_CD"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_NBR",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_NBR"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STATE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STATE_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_TWO_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_TWO_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_THREE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_STREET_ADDRESS_THREE_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_LOGISTICS_ZIP_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_LOGISTICS_ZIP_CD"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_CUSTOMER_COUNTRY_INTERNATIONAL_STANDARD_ORGANISATION_CURRENCY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_CUSTOMER_COUNTRY_INTERNATIONAL_STANDARD_ORGANISATION_CURRENCY_CD"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_CUSTOMER_NM"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_CUSTOMER_STATE_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_CUSTOMER_STATE_CD"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_CUSTOMER_STREET_ADDRESS_TWO_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_CUSTOMER_STREET_ADDRESS_TWO_TXT"
+          },
+          {
+            "name": "REPORTED_SHIP_TO_CUSTOMER_ZIP_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SHIP_TO_CUSTOMER_ZIP_CD"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_CITY_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_CITY_NM"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_COUNTRY_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_COUNTRY_CD"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_NM"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_ID",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_ID"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STATE_NM",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STATE_NM"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_ONE_TXT"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_TWO_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_TWO_TXT"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_THREE_TXT",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_STREET_ADDRESS_THREE_TXT"
+          },
+          {
+            "name": "REPORTED_SOLD_TO_CUSTOMER_ZIP_CD",
+            "dataType": "string",
+            "sourceColumn": "REPORTED_SOLD_TO_CUSTOMER_ZIP_CD"
+          },
+          {
+            "name": "REPORTED_UNIT_SPECIAL_COST_AMT",
+            "dataType": "double",
+            "sourceColumn": "REPORTED_UNIT_SPECIAL_COST_AMT"
+          },
+          {
+            "name": "NIELSEN_ID",
+            "dataType": "string",
+            "sourceColumn": "NIELSEN_ID"
+          },
+          {
+            "name": "DIRECT_CUSTOMER_BUSINESS_ROUTING_CD",
+            "dataType": "string",
+            "sourceColumn": "DIRECT_CUSTOMER_BUSINESS_ROUTING_CD"
+          },
+          {
+            "name": "CREATE_AGENT_ID",
+            "dataType": "string",
+            "sourceColumn": "CREATE_AGENT_ID"
+          },
+          {
+            "name": "CREATE_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "CREATE_DTM"
+          },
+          {
+            "name": "CHANGE_AGENT_ID",
+            "dataType": "string",
+            "sourceColumn": "CHANGE_AGENT_ID"
+          },
+          {
+            "name": "CHANGE_DTM",
+            "dataType": "dateTime",
+            "sourceColumn": "CHANGE_DTM"
+          },
+          {
+            "name": "XMIT_REFERENCE_NBR",
+            "dataType": "string",
+            "sourceColumn": "XMIT_REFERENCE_NBR"
+          },
+          {
+            "name": "INTEL_RECEIPT_TS",
+            "dataType": "dateTime",
+            "sourceColumn": "INTEL_RECEIPT_TS"
+          },
+          {
+            "name": "DISTRIBUTOR_SENDER_LOCAL_TS",
+            "dataType": "dateTime",
+            "sourceColumn": "DISTRIBUTOR_SENDER_LOCAL_TS"
+          },
+          {
+            "name": "FALLOUT_CD",
+            "dataType": "string",
+            "sourceColumn": "FALLOUT_CD"
+          },
+          {
+            "name": "FALLOUT_TYPE_NM",
+            "dataType": "string",
+            "sourceColumn": "FALLOUT_TYPE_NM"
+          },
+          {
+            "name": "FALLOUT_DSC",
+            "dataType": "string",
+            "sourceColumn": "FALLOUT_DSC"
+          },
+          {
+            "name": "FALLOUT_CORRECTIVE_ACTION_DSC",
+            "dataType": "string",
+            "sourceColumn": "FALLOUT_CORRECTIVE_ACTION_DSC"
+          },
+          {
+            "name": "MAX_BATCH_SEQUENCE_NBR",
+            "dataType": "double",
+            "sourceColumn": "MAX_BATCH_SEQUENCE_NBR"
+          },
+          {
+            "name": "TEMPLATE_VERSION_NBR",
+            "dataType": "double",
+            "sourceColumn": "TEMPLATE_VERSION_NBR"
+          },
+          {
+            "name": "TEMPLATE_VERSION_NM",
+            "dataType": "string",
+            "sourceColumn": "TEMPLATE_VERSION_NM"
+          },
+          {
+            "name": "INGEST_TS",
+            "dataType": "string",
+            "sourceColumn": "INGEST_TS"
+          },
+          {
+            "name": "LAST_REFRESH_DTM",
+            "dataType": "string",
+            "sourceColumn": "LAST_REFRESH_DTM"
+          },
+          {
+            "name": "MVIEW_TS",
+            "dataType": "string",
+            "sourceColumn": "MVIEW_TS"
+          },
+          {
+            "type": "calculated",
+            "name": "Dataset",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "UPPER(OPERATIONAL_FALLOUT[DATASET_NM])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"ECDW_DEV\",",
+                "    SALES_MARKETING_Database = Source{[Name=\"SALES_MARKETING\",Kind=\"Database\"]}[Data],",
+                "    CONSUMPTION_SALES_OUT_ANALYSIS_Schema = SALES_MARKETING_Database{[Name=\"CONSUMPTION_SALES_OUT_ANALYSIS\",Kind=\"Schema\"]}[Data],",
+                "    OPERATIONAL_FALLOUT_View = CONSUMPTION_SALES_OUT_ANALYSIS_Schema{[Name=\"OPERATIONAL_FALLOUT\",Kind=\"View\"]}[Data]",
+                "in",
+                "    OPERATIONAL_FALLOUT_View"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Last Refreshed_Fall",
+            "expression": "REPLACE(MAX(OPERATIONAL_FALLOUT[LAST_REFRESH_DTM]),24,3,\"PST\")"
+          }
+        ]
+      },
+      {
+        "name": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+        "columns": [
+          {
+            "name": "ORGANISATION_ASSIGNED_DATASET_CD",
+            "dataType": "string",
+            "sourceColumn": "ORGANISATION_ASSIGNED_DATASET_CD"
+          },
+          {
+            "name": "ORGANISATION_ASSIGNED_ORGANISATION_ID",
+            "dataType": "double",
+            "sourceColumn": "ORGANISATION_ASSIGNED_ORGANISATION_ID"
+          },
+          {
+            "name": "ORGANISATION_ASSIGNED_PRINCIPAL_ID",
+            "dataType": "double",
+            "sourceColumn": "ORGANISATION_ASSIGNED_PRINCIPAL_ID"
+          },
+          {
+            "name": "ORGANISATION_ASSIGNED_TIER_TWO_THREE_HIERARCHY_ID",
+            "dataType": "double",
+            "sourceColumn": "ORGANISATION_ASSIGNED_TIER_TWO_THREE_HIERARCHY_ID"
+          },
+          {
+            "name": "ROLE_ASSIGNED_ROLE_ID",
+            "dataType": "double",
+            "sourceColumn": "ROLE_ASSIGNED_ROLE_ID"
+          },
+          {
+            "name": "ROLE_ASSIGNED_PRINCIPAL_ID",
+            "dataType": "double",
+            "sourceColumn": "ROLE_ASSIGNED_PRINCIPAL_ID"
+          },
+          {
+            "name": "ROLE_VIEW_ROLE_ID",
+            "dataType": "double",
+            "sourceColumn": "ROLE_VIEW_ROLE_ID"
+          },
+          {
+            "name": "ROLE_VIEW_ROLE_NM",
+            "dataType": "string",
+            "sourceColumn": "ROLE_VIEW_ROLE_NM"
+          },
+          {
+            "name": "USER_VIEW_EMAIL_ADDRESS_TXT",
+            "dataType": "string",
+            "sourceColumn": "USER_VIEW_EMAIL_ADDRESS_TXT"
+          },
+          {
+            "name": "USER_VIEW_USER_NM",
+            "dataType": "string",
+            "sourceColumn": "USER_VIEW_USER_NM"
+          },
+          {
+            "name": "USER_VIEW_WWID",
+            "dataType": "string",
+            "sourceColumn": "USER_VIEW_WWID"
+          },
+          {
+            "name": "ORGANISATION_VIEW_ADLS_ORGANISATION_NM",
+            "dataType": "string",
+            "sourceColumn": "ORGANISATION_VIEW_ADLS_ORGANISATION_NM"
+          },
+          {
+            "name": "ORGANISATION_VIEW_FILE_ORGANISATION_NM",
+            "dataType": "string",
+            "sourceColumn": "ORGANISATION_VIEW_FILE_ORGANISATION_NM"
+          },
+          {
+            "name": "ORGANISATION_VIEW_ORGANISATION_ID",
+            "dataType": "double",
+            "sourceColumn": "ORGANISATION_VIEW_ORGANISATION_ID"
+          },
+          {
+            "name": "ORGANISATION_VIEW_ORGANISATION_NM",
+            "dataType": "string",
+            "sourceColumn": "ORGANISATION_VIEW_ORGANISATION_NM"
+          },
+          {
+            "name": "DATASET_VIEW_DATASET_LOOKUP_CD",
+            "dataType": "string",
+            "sourceColumn": "DATASET_VIEW_DATASET_LOOKUP_CD"
+          },
+          {
+            "name": "DATASET_VIEW_DATASET_DSC",
+            "dataType": "string",
+            "sourceColumn": "DATASET_VIEW_DATASET_DSC"
+          },
+          {
+            "type": "calculated",
+            "name": "Dataset",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "UPPER(OPERATIONAL_DATA_USER_SECURITY_MAP[DATASET_VIEW_DATASET_LOOKUP_CD])"
+          },
+          {
+            "name": "ORGANISATION_ASSIGNED_PROCESS_AREA_NM",
+            "dataType": "string",
+            "sourceColumn": "ORGANISATION_ASSIGNED_PROCESS_AREA_NM"
+          },
+          {
+            "name": "PROGRAM_NM",
+            "dataType": "string",
+            "sourceColumn": "PROGRAM_NM"
+          },
+          {
+            "name": "PROCESS_AREA_NM",
+            "dataType": "string",
+            "sourceColumn": "PROCESS_AREA_NM"
+          },
+          {
+            "type": "calculated",
+            "name": "Last Refresh_PST_NEW",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(NOW(),\" PST\")"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"ECDW_DEV\",",
+                "    SALES_MARKETING_Database = Source{[Name=\"SALES_MARKETING\",Kind=\"Database\"]}[Data],",
+                "    CONSUMPTION_SALES_OUT_ANALYSIS_Schema = SALES_MARKETING_Database{[Name=\"CONSUMPTION_SALES_OUT_ANALYSIS\",Kind=\"Schema\"]}[Data],",
+                "    OPERATIONAL_DATA_USER_SECURITY_MAP_View = CONSUMPTION_SALES_OUT_ANALYSIS_Schema{[Name=\"OPERATIONAL_DATA_USER_SECURITY_MAP\",Kind=\"View\"]}[Data]",
+                "in",
+                "    OPERATIONAL_DATA_USER_SECURITY_MAP_View"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Last Refresh",
+            "expression": "CONCATENATE(CONCATENATE(\"Data As On : \",UTCNOW()),\" UTC\")"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "3b6ed66d-c6f1-4b80-8a10-a294e3b2e23d",
+        "toCardinality": "many",
+        "fromTable": "OPERATIONAL_SUBMISSION",
+        "fromColumn": "Dataset",
+        "toTable": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+        "toColumn": "Dataset",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "7b43c390-ffc4-4e18-9f36-eb0a51460fed",
+        "toCardinality": "many",
+        "fromTable": "OPERATIONAL_FALLOUT",
+        "fromColumn": "Dataset",
+        "toTable": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+        "toColumn": "Dataset",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "4f6a404f-1afa-4e99-b4ce-71d72e489240",
+        "toCardinality": "many",
+        "fromTable": "OPERATIONAL_REJECTION",
+        "fromColumn": "Dataset",
+        "toTable": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+        "toColumn": "Dataset",
+        "crossFilteringBehavior": "bothDirections"
+      }
+    ],
+    "roles": [
+      {
+        "name": "Admin",
+        "modelPermission": "administrator",
+        "members": [
+          {
+            "memberName": "GAR\\divyas4x",
+            "memberId": "S-1-5-21-1004336348-1383384898-1417001333-1018546"
+          },
+          {
+            "memberName": "GAR\\rrajannx",
+            "memberId": "S-1-5-21-1004336348-1383384898-1417001333-1024608"
+          }
+        ]
+      },
+      {
+        "name": "Super User",
+        "description": "This Entitlement provides Super User Access",
+        "modelPermission": "readRefresh",
+        "members": [
+          {
+            "memberName": "AMR\\CDMA - Intel Business Operations - Preprod",
+            "memberId": "S-1-5-21-725345543-602162358-527237240-7314601"
+          }
+        ]
+      },
+      {
+        "name": "Graphics User",
+        "description": "This Entitlement provides access to Graphics Data",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "AMR\\CDMA Graphics - Intel Business Operations - Preprod",
+            "memberId": "S-1-5-21-725345543-602162358-527237240-7314600"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+            "filterExpression": "OPERATIONAL_DATA_USER_SECURITY_MAP[ROLE_VIEW_ROLE_ID]=3 && UPPER(OPERATIONAL_DATA_USER_SECURITY_MAP[PROCESS_AREA_NM])=\"DISTI AIC\""
+          }
+        ]
+      },
+      {
+        "name": "Branded Client User",
+        "description": "This Entitlement provides access to Branded Client Data",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "AMR\\CDMA Branded Client -Intel Business Operations - Preprod",
+            "memberId": "S-1-5-21-725345543-602162358-527237240-7314594"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+            "filterExpression": "OPERATIONAL_DATA_USER_SECURITY_MAP[ROLE_VIEW_ROLE_ID]=3 && UPPER(OPERATIONAL_DATA_USER_SECURITY_MAP[PROCESS_AREA_NM])=\"DGP-S\""
+          }
+        ]
+      },
+      {
+        "name": "Direct OEM User",
+        "description": "This Entitlement provides access to Sales out Data",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "AMR\\CDMA Direct OEM - Intel Business Operations - Preprod",
+            "memberId": "S-1-5-21-725345543-602162358-527237240-7314595"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+            "filterExpression": "OPERATIONAL_DATA_USER_SECURITY_MAP[ROLE_VIEW_ROLE_ID]=3 && UPPER(OPERATIONAL_DATA_USER_SECURITY_MAP[PROCESS_AREA_NM])=\"Direct OEM\""
+          }
+        ]
+      },
+      {
+        "name": "IACS User",
+        "description": "This Entitlement provides access to IACS Data",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "AMR\\CDMA IACS - Intel Business Operations - Preprod",
+            "memberId": "S-1-5-21-725345543-602162358-527237240-7314591"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+            "filterExpression": "OPERATIONAL_DATA_USER_SECURITY_MAP[ROLE_VIEW_ROLE_ID]=3 &&  UPPER(OPERATIONAL_DATA_USER_SECURITY_MAP[PROCESS_AREA_NM])=\"COMPONENT SUPPLIER\""
+          }
+        ]
+      },
+      {
+        "name": "BGA User",
+        "description": "This Entitlement provides access to BGA Data",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "AMR\\CDMA BGA - Intel Business Operations - Preprod",
+            "memberId": "S-1-5-21-725345543-602162358-527237240-7329725"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+            "filterExpression": "OPERATIONAL_DATA_USER_SECURITY_MAP[ROLE_VIEW_ROLE_ID]=3 &&  UPPER(OPERATIONAL_DATA_USER_SECURITY_MAP[PROCESS_AREA_NM])=\"BGA\""
+          }
+        ]
+      },
+      {
+        "name": "IAD User",
+        "description": "This Entitlement provides access to IAD Data",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "AMR\\CDMA IAD - Intel Business Operations - Preprod",
+            "memberId": "S-1-5-21-725345543-602162358-527237240-7338318"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "OPERATIONAL_DATA_USER_SECURITY_MAP",
+            "filterExpression": "OPERATIONAL_DATA_USER_SECURITY_MAP[ROLE_VIEW_ROLE_ID]=3 &&  UPPER(OPERATIONAL_DATA_USER_SECURITY_MAP[PROCESS_AREA_NM])=\"IAD\""
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
